@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftUI_IdleDetector",
+    name: "IdleDetector",
     platforms: [
         .iOS(.v14),
         .macOS(.v11),
@@ -14,14 +14,14 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "SwiftUI_IdleDetector",
-            targets: ["SwiftUI_IdleDetector"]),
+            name: "IdleDetector",
+            targets: ["IdleDetector"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SwiftUI_IdleDetector"),
+            name: "IdleDetector"),
 
     ]
 )

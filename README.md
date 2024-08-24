@@ -8,6 +8,7 @@ IdleDetector is a Swift library for iOS that helps you track user activity and d
 - Customizable idle time threshold
 - Automatic tracking of user interactions
 - Access to idle time and idle state through environment objects
+- Thread-safe implementation using Swift's concurrency model
 
 ## Requirements
 
@@ -22,14 +23,14 @@ IdleDetector is a Swift library for iOS that helps you track user activity and d
 You can install IdleDetector using the [Swift Package Manager](https://swift.org/package-manager/):
 
 1. In Xcode, select "File" → "Swift Packages" → "Add Package Dependency"
-2. Enter the repository URL: `https://github.com/SeikoLai/SwiftUI_IdleDetector.git`
+2. Enter the repository URL: `https://github.com/yourusername/IdleDetector.git`
 3. Select the version you want to use
 
 Alternatively, you can add the following to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/SeikoLai/SwiftUI_IdleDetector.git", from: "1.0.0")
+    .package(url: "https://github.com/yourusername/IdleDetector.git", from: "1.0.0")
 ]
 ```
 
@@ -110,6 +111,10 @@ Manages and tracks idle time in an application.
   
   Resets the idle time when user interaction is detected.
 
+## Thread Safety
+
+IdleDetector uses Swift's concurrency model to ensure thread safety. The main components are marked with `@MainActor` to ensure they're always accessed on the main thread, preventing potential race conditions and ensuring smooth integration with SwiftUI's view lifecycle.
+
 ## License
 
 IdleDetector is released under the MIT License. See [LICENSE](LICENSE) for details.
@@ -121,3 +126,14 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Support
 
 If you have any questions or issues, please open an issue on the GitHub repository.
+
+## Changelog
+
+### 1.0.1
+
+- Improved thread safety using Swift's actor model
+- Fixed issues related to accessing UI components from background threads
+
+### 1.0.0
+
+- Initial release

@@ -8,6 +8,7 @@
 import SwiftUI
 
 /// A custom ViewModifier to add and remove user activity tracking.
+@MainActor
 public struct UserActivityTrackerModifier: ViewModifier {
     @StateObject private var idleTimeManager: IdleTimeManager
     
@@ -19,7 +20,9 @@ public struct UserActivityTrackerModifier: ViewModifier {
     
     public func body(content: Content) -> some View {
         content
-            .onAppear(perform: UIApplication.shared.addUserActivityTracker)
+            .onAppear {
+                UIApplication.shared.addUserActivityTracker()
+            }
             .onDisappear {
                 if UIApplication.shared.hasUserActivityTracker {
                     UIApplication.shared.removeUserActivityTracker()
