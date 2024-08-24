@@ -23,14 +23,14 @@ IdleDetector is a Swift library for iOS that helps you track user activity and d
 You can install IdleDetector using the [Swift Package Manager](https://swift.org/package-manager/):
 
 1. In Xcode, select "File" → "Swift Packages" → "Add Package Dependency"
-2. Enter the repository URL: `https://github.com/yourusername/IdleDetector.git`
+2. Enter the repository URL: `https://github.com/SeikoLai/SwiftUI_IdleDetector.git`
 3. Select the version you want to use
 
 Alternatively, you can add the following to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourusername/IdleDetector.git", from: "1.0.0")
+    .package(url: "https://github.com/SeikoLai/SwiftUI_IdleDetector.git", from: "1.0.0")
 ]
 ```
 
